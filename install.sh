@@ -59,14 +59,6 @@ sudo systemctl disable apache2
 
 sudo service apache2 stop
 
-valet install
-
-mkdir ~/Sites
-
-cd ~/Sites
-
-valet park
-
 echo '💾 Installing Takeout...'
 echo '------------------------'
 
