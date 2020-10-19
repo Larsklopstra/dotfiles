@@ -32,7 +32,7 @@ sudo usermod -aG docker $USER
 echo '🤖 Installing dev environment...'
 echo '--------------------------------'
 
-sudo apt install nodejs php php-cli composer docker.io -y
+sudo apt install nodejs npm php php-cli composer docker.io -y
 
 echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.bashrc
 
