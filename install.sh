@@ -18,7 +18,7 @@ rm ~/.config/fish/config.fish -f
 
 mkdir -p ~/.config/fish
 
-cp ~/dotfiles/config.fish ~/.config/fish/config.fish
+cp ~/dotfiles/dotfiles/config.fish ~/.config/fish/config.fish
 
 chsh -s `which fish`
 
