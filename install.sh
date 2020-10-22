@@ -46,7 +46,7 @@ sudo systemctl enable docker
 echo '🐘 Installing PHP extensions...'
 echo '-------------------------------'
 
-sudo apt install php-mbstring php-mysql php-xml php-json php-tokenizer php-ctype php-fileinfo php-zip php-curl -y
+sudo apt install php-mbstring php-mysql php-xml php-json php-tokenizer php-ctype php-fileinfo php-zip php-curl php-intl -y
 
 echo '🌐 Installing Linux Valet...'
 echo '----------------------------'
