@@ -12,7 +12,9 @@ echo '----------------------------------'
 
 sudo apt install fish -y
 
-sudo snap install starship
+sudo apt install curl
+
+curl -fsSL https://starship.rs/install.sh | bash
 
 rm ~/.config/fish/config.fish -f
 
@@ -32,11 +34,19 @@ sudo usermod -aG docker $USER
 echo '🤖 Installing dev environment...'
 echo '--------------------------------'
 
-sudo apt install nodejs php php-cli composer docker.io -y
+sudo apt install nodejs npm php php-cli docker.io -y
 
-echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.bashrc
+echo '🎼 Installing composer...'
+echo '-------------------------'
 
-source ~/.bashrc
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'c31c1e292ad7be5f49291169c0ac8f683499edddcfd4e42232982d0fd193004208a58ff6f353fde0012d35fdd72bc394') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+sudo mkdir -p /usr/local/bin
+
+sudo mv composer.phar /usr/local/bin/composer
 
 echo '🐋 Enabling docker on boot...'
 echo '-----------------------------'
@@ -46,7 +56,7 @@ sudo systemctl enable docker
 echo '🐘 Installing PHP extensions...'
 echo '-------------------------------'
 
-sudo apt install php-mbstring php-mysql php-xml php-json php-tokenizer php-ctype php-fileinfo php-zip php-curl -y
+sudo apt install php-mbstring php-mysql php-xml php-json php-tokenizer php-ctype php-fileinfo php-zip php-curl php-intl php-gd -y
 
 echo '🌐 Installing Linux Valet...'
 echo '----------------------------'
@@ -58,14 +68,6 @@ composer global require cpriego/valet-linux
 sudo systemctl disable apache2
 
 sudo service apache2 stop
-
-valet install
-
-mkdir ~/Sites
-
-cd ~/Sites
-
-valet park
 
 echo '💾 Installing Takeout...'
 echo '------------------------'
@@ -104,3 +106,4 @@ ssh-keygen -t ed25519
 
 echo '🎉 You are now ready to create awesome software!'
 echo '------------------------------------------------'
+
