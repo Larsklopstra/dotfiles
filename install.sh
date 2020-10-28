@@ -48,6 +48,8 @@ sudo mkdir -p /usr/local/bin
 
 sudo mv composer.phar /usr/local/bin/composer
 
+echo 'export PATH="~/.config/composer/vendor/bin:$PATH"' >> ~/.bashrc
+
 echo '🐋 Enabling docker on boot...'
 echo '-----------------------------'
 
