@@ -106,4 +106,3 @@ ssh-keygen -t ed25519
 
 echo '🎉 You are now ready to create awesome software!'
 echo '------------------------------------------------'
-

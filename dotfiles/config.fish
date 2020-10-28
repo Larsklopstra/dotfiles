@@ -3,4 +3,3 @@ function art
 end
 
 starship init fish | source
-
