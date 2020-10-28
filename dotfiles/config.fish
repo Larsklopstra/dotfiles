@@ -1,3 +1,5 @@
+set fish_greeting
+
 function art
 	php artisan $argv
 end
