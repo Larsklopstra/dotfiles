@@ -1,3 +1,4 @@
+set PATH $PATH ~/.config/composer/vendor/bin
 set fish_greeting
 
 function art
