@@ -2,11 +2,11 @@
 
 clear
 
-echo "\nSetting up Takeout...\n"
+echo \n"Setting up Takeout..."\n
 
 takeout enable redis mysql --default
 
-echo "\nSetting up Laravel Valet...\n"
+echo \n"Setting up Laravel Valet..."\n
 
 valet install
 
@@ -16,7 +16,7 @@ cd ~/Sites
 
 valet park
 
-echo "\nSetting up git...\n"
+echo \n"Setting up git..."\n
 
 echo 'What is your name?'
 
@@ -30,10 +30,10 @@ read email
 
 git config --global user.email $email 
 
-echo "\nGenerating SSH keys...\n"
+echo \n"Generating SSH keys..."\n
 
 ssh-keygen -t ed25519
 
 clear
 
-echo "\nInstallation completed!\n"
+echo \n"Installation completed!"\n

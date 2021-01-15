@@ -2,13 +2,13 @@
 
 clear
 
-echo "\nStarting setup...\n"
+echo \n"Starting setup..."\n
 
 sudo apt update
 
 sudo apt upgrade
 
-echo "\nSetting up shell...\n"
+echo \n"Setting up shell..."\n
 
 sudo apt install fish -y
 
@@ -24,19 +24,22 @@ cp ~/dotfiles/dotfiles/config.fish ~/.config/fish/config.fish
 
 chsh -s `which fish`
 
-echo "\nAdding current user to docker group...\n"
+echo \n"Adding current user to docker group..."\n
 
 sudo groupadd docker
 
 sudo usermod -aG docker $USER
 
-echo "\nInstalling dev environment...\n"
+echo \n"Installing dev environment..."
 
 sudo apt install nodejs npm php php-cli docker.io -y
 
-echo "\nInstalling composer...\n"
+echo \n"Installing composer..."\n
 
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+
+php composer-setup.php
+
 php -r "unlink('composer-setup.php');"
 
 sudo mkdir -p /usr/local/bin
@@ -45,15 +48,15 @@ sudo mv composer.phar /usr/local/bin/composer
 
 echo 'export PATH="~/.config/composer/vendor/bin:$PATH"' >> ~/.bashrc
 
-echo "\nEnabling docker on boot...\n"
+echo \n"Enabling docker on boot..."\n
 
 sudo systemctl enable docker
 
-echo "\nInstalling PHP extensions...\n"
+echo \n"Installing PHP extensions..."\n
 
 sudo apt install php-mbstring php-mysql php-xml php-json php-tokenizer php-ctype php-fileinfo php-zip php-curl php-redis php-intl php-gd -y
 
-echo "\nInstalling Linux Valet...\n"
+echo \n"Installing Linux Valet..."\n
 
 sudo apt install network-manager libnss3-tools jq xsel -y
 
@@ -63,19 +66,19 @@ sudo systemctl disable apache2
 
 sudo service apache2 stop
 
-echo "\nInstalling takeout...\n"
+echo \n"Installing takeout..."\n
 
 composer global require tightenco/takeout
 
-echo "\nInstalling Laravel installer...\n"
+echo \n"Installing Laravel installer..."\n
 
 composer global require laravel/installer
 
-echo "\nInstalling Statamic installer...\n"
+echo \n"Installing Statamic installer..."\n
 
 composer global require statamic/cli
 
-echo "\nA reboot is required, rebooting in 10 seconds...\n"
+echo \n"A reboot is required, rebooting in 10 seconds..."\n
 
 sleep 10
 
