@@ -30,4 +30,4 @@ rm notable.deb
 
 clear
 
-echo "\nAl tools installed!\n"
+echo "\nAll tools installed!\n"
