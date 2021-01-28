@@ -66,6 +66,10 @@ sudo systemctl disable apache2
 
 sudo service apache2 stop
 
+echo \n"PHP CS Fixer..."\n
+
+composer global require friendsofphp/php-cs-fixer
+
 echo \n"Installing takeout..."\n
 
 composer global require tightenco/takeout
